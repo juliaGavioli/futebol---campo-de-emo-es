@@ -10,7 +10,7 @@
 
   <script src="./js/sessao.js"></script>
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../css/stylec.css" />
   <link rel="icon" href="./assets/icon/favicon2.ico" />
   <link rel="preconnect" href="https://fonts.gstatic.com" />
 </head>
@@ -20,14 +20,14 @@
   <div class="header">
     <div class="container">
       <h1 class="titulo">Campo de emoções</h1>
+    
       <ul class="navbar">
         <li>
           <a href="Index.HTML">Home</a>
-        </li> 
-       <!-- <li>
-          <a href="simulador.html">Simulador</a>
         </li>
-        <li>|</li> -->
+        <li>
+          <a href="sobre.HTML">Sobre</a>
+        </li>
         <li>
           <a href="Login.HTML">Login</a>
         </li>
@@ -39,7 +39,7 @@
   </div>
   <!--header fim-->
 
-  <div class="login">
+  <div class="cadastro">
     <div class="alerta_erro">
       <div class="card_erro" id="cardErro">
         <span id="mensagem_erro"></span>
@@ -59,7 +59,7 @@
           </div>
           <div class="campo">
             <span>E-mail:</span>
-            <input id="email_input" type="text" placeholder="meuemail@futebol.com" />
+            <input id="email_input" type="text" placeholder="seuemail@futebol.com" />
           </div>
           <div class="campo">
             <span>Senha:</span>
@@ -74,6 +74,8 @@
         <div id="div_aguardar" class="loading-div">
           <img src="./assets/circle-loading.gif" id="loading-gif" />
         </div>
+
+        <div class="img"><img src="../imagem registro.webp"></div>
 
         <div id="div_erros_login"></div>
       </div>
@@ -107,16 +109,16 @@
 
     // Verificando se há algum campo em branco
     if (
-     // cpf == "" ||
+      // cpf == "" ||
       nomeVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
       confirmacaoSenhaVar == "" // ||
-     // codigoVar == ""
+      // codigoVar == ""
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
-        "(Mensagem de erro para todos os campos em branco)";
+        "Preencha todos os campos!";
 
       finalizarAguardar();
       return false;
@@ -125,16 +127,16 @@
     }
 
     // Verificando se o código de ativação é de alguma empresa cadastrada
- //   for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
-     // if (listaEmpresasCadastradas[i].codigo_ativacao == codigoVar) {
-     //   idEmpresaVincular = listaEmpresasCadastradas[i].id
-      //  console.log("Código de ativação válido.");
-      //  break;
-     // } else {
-       // cardErro.style.display = "block";
-      //  mensagem_erro.innerHTML = "(Mensagem de erro para código inválido)";
-      //  finalizarAguardar();
-     // }
+    //   for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
+    // if (listaEmpresasCadastradas[i].codigo_ativacao == codigoVar) {
+    //   idEmpresaVincular = listaEmpresasCadastradas[i].id
+    //  console.log("Código de ativação válido.");
+    //  break;
+    // } else {
+    // cardErro.style.display = "block";
+    //  mensagem_erro.innerHTML = "(Mensagem de erro para código inválido)";
+    //  finalizarAguardar();
+    // }
     //}
 
     // Enviando o valor da nova input
@@ -149,7 +151,7 @@
         nomeServer: nomeVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
-       // idEmpresaVincularServer: idEmpresaVincular
+        // idEmpresaVincularServer: idEmpresaVincular
       }),
     })
       .then(function (resposta) {

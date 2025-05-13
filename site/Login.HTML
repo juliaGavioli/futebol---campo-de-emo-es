@@ -10,7 +10,7 @@
 
     <script src="./js/sessao.js"></script>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/stylel.css">
     <link rel="icon" href="./assets/icon/favicon2.ico">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 </head>
@@ -22,14 +22,15 @@
     <div class="header">
         <div class="container">
             <h1 class="titulo">Campo de emoções</h1>
+            
             <ul class="navbar">
                 <li>
                     <a href="Index.HTML">Home</a>
                 </li>
-               <!--<li>
-                    <a href="simulador.html">Simulador</a>
+                <li>
+                    <a href="sobre.HTML">Sobre</a>
                 </li>
-                <li>|--> </li>
+                </li>
                 <li class="agora">
                     <a href="#">Login</a>
                 </li>
@@ -40,6 +41,7 @@
         </div>
     </div>
 
+     
 
     <div class="login">
         <div class="alerta_erro">
@@ -66,6 +68,8 @@
                     <img src="./assets/circle-loading.gif" id="loading-gif">
                 </div>
 
+                <div class="img"><img src="../imagem login.jpg" ></div>
+
                 <div id="div_erros_login"></div>
             </div>
         </div>
@@ -78,14 +82,14 @@
 
 
     function entrar() {
-        aguardar();
+        // aguardar();
 
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
 
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            mensagem_erro.innerHTML = "Preencha todos os campos!";
             finalizarAguardar();
             return false;
         }
@@ -120,7 +124,7 @@
                     sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
 
                     setTimeout(function () {
-                        window.location = "site.HTML";
+                        window.location = "quiz.HTML";
                     }, 1000); // apenas para exibir o loading
 
                 });
