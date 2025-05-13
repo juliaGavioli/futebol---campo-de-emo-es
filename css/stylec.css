@@ -16,6 +16,11 @@ body {
   --tamanho-footer: 65px;
 }
 
+* {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
 .container {
   display: flex;
   width: 80%;
@@ -89,7 +94,7 @@ body {
 
 /* FOOTER */
 
-.footer {
+/* .footer {
   background-color: #32b9cd;
   height: 150px;
   color: #fff;
@@ -104,19 +109,28 @@ body {
 
 .footer .container .version {
   font-size: 12px;
-}
+} */
 
 /* cadastro */
 
+
+.title {
+  position: relative;
+  top: -32rem ;
+  left: 55%;
+}
+
+
 .img{
   position: relative;
-  right: -40rem;
-  margin-top: -48%;
+  right: -52rem;
+  top: -30rem;
+  width: 100%;
 }
 
 .img img {
-  width: 480px;
-  height: 280px;
+  width: 400px;
+  height: 350px;
 }
 
 .cadastro {
@@ -153,6 +167,7 @@ body {
 
 .card h2 {
   margin: 0;
+  margin-top: -25px;
   font-size: 40px;
 }
 
@@ -173,7 +188,7 @@ body {
   border: 2px;
   text-align: center;
   border-radius: 10px;
-  margin: 0;
+  
 }
 
 .formulario select {
@@ -190,7 +205,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  padding: 10px 0;
 }
 
 .botao {
@@ -289,7 +303,7 @@ input {
   width: 50px;
 }
 /* ALERTA */
-
+/* 
 #alerta {
   position: absolute;
   right: 0;
@@ -333,4 +347,4 @@ input {
   50%  {transform: rotate(25deg)}
   75%  {transform: rotate(-25deg)}
   100% {transform: rotate(25deg)}
-}
+} */

@@ -35,7 +35,7 @@ body {
 
 .header a {
   text-decoration: none;
-  color:black;
+  color: black;
 }
 
 .agora {
@@ -66,8 +66,9 @@ body {
 .banner {
   height: var(--tamanho-banner);
   color: black;
-  background-image: url("../Login.png");
+  background-image: url("../campo.png");
   background-size: cover;
+
 }
 
 .banner .container {
@@ -87,26 +88,19 @@ body {
   font-weight: 800;
 }
 
-/* FOOTER */
-
-.footer {
-  background-color: #32b9cd;
-  height: 150px;
-  color: #fff;
-  display: flex;
-  font-size: 15px;
-}
-
-.footer .container {
-  justify-content: center;
-  text-align: center;
-}
-
-.footer .container .version {
-  font-size: 12px;
-}
-
 /* LOGIN */
+
+.img .subtitulo {
+  text-align: center;
+  height: 30%;
+  margin-top: 60px;
+}
+
+.subtitulo h1{
+  color: black;
+  position: relative;
+  left: 25%;
+}
 
 .img {
   position: relative;
@@ -114,14 +108,14 @@ body {
   margin-top: -40%;
 }
 
-.img img{
+.img img {
   width: 600px;
   height: 300px;
 }
 
 .login {
   height: var(--tamanho-login);
-  background-image: url('../Login.png');
+  background-image: url('../campo.png');
   background-size: cover;
   height: 87vh;
 }
@@ -224,7 +218,7 @@ body {
 
 /* FORMULARIO */
 
-.alerta_erro{
+.alerta_erro {
   display: flex;
   justify-content: flex-end;
 }
@@ -241,7 +235,7 @@ body {
   margin-right: 10%;
 }
 
-.card_erro #mensagem_erro{
+.card_erro #mensagem_erro {
   font-weight: 500;
   font-size: 20px;
 }
@@ -287,51 +281,4 @@ input {
 .loading-div img {
   height: 50px;
   width: 50px;
-}
-
-/* ALERTA */
-
-#alerta {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-}
-
-.mensagem-alarme {
-  background-color: white;
-  border-radius: 5px;
-  width: 300px;
-  height: 80px;
-  margin: 10px;
-  padding: 10px 0;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.mensagem-alarme h3 {
-  font-size: 14px;
-  margin: 0;
-}
-
-.mensagem-alarme .informacao {
-  width: 66%;
-}
-
-.alarme-sino {
-  width: 48px;
-  height: 48px;
-  animation-name: bell;
-  animation-duration: 4s;
-  background-image: url('https://cdn-icons-png.flaticon.com/512/1157/1157000.png');
-  background-size: cover;
-  animation-iteration-count: infinite;
-}
-
-@keyframes bell {
-  0%   {transform: rotate(25deg)}
-  25%  {transform: rotate(-25deg)}
-  50%  {transform: rotate(25deg)}
-  75%  {transform: rotate(-25deg)}
-  100% {transform: rotate(25deg)}
 }
