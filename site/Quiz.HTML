@@ -5,11 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campo de emoções</title>
-    <link rel="stylesheet" href="styleq.css">
+    <link rel="stylesheet" href="../css/styleq.css">
 </head>
 
 
 <body onload="onloadEsconder()">
+    <div class="header">
+        <div class="container">
+            <h1 class="titulo">Campo de emoções</h1>
+            <ul class="navbar">
+                <li><a href="Index.HTML">Home</a></li>
+                <li><a href="sobre.HTML">Sobre</a></li>
+                <li><a href="Login.HTML">Login</a></li>
+                <li class="agora"><a href="Cadastro.HTML">Cadastro</a></li>
+            </ul>
+        </div>
+    </div>
     <h1>Campo de emoções</h1>
     <div id="pontuacaoEJogo">
         <button id="btnIniciarQuiz" onclick="iniciarQuiz()">INICIAR QUIZ</button>
@@ -18,6 +29,11 @@
             <div id="pontuacaoDuranteJogo" class="flex-colunar padding-8">
                 <span class="width-fit-content">Quantidade de acertos: <span id="spanCertas"></span></span>
                 <span class="width-fit-content">Quantidade de erros: <span id="spanErradas"></span></span>
+            </div>
+            <div id="cronometro" class="flex-colunar pedding-8">
+                <span>Tempo Restante: <span id="tempoRestante">08:00 </span>
+                </span>
+
             </div>
             <div id="pontuacaoFinalJogo" class="flex-colunar padding-8">
                 <span id="pontuacaoFinal" class="width-fit-content">Pontuação Final:
@@ -58,9 +74,9 @@
             </div>
 
             <div id="botoes" class="flex-colunar padding-8">
-                <button onclick="submeter()" id="btnSubmeter">Submeter resposta</button>
+                <button onclick="submeter()" id="btnSubmeter">Guardar resposta</button>
                 <button onclick="avancar()" id="btnProx" disabled>Avançar para próxima questão</button>
-                <!-- <button onclick="finalizar()" id="btnConcluir" disabled>Finalizar Quiz</button> -->
+                <button onclick="finalizar()" id="btnConcluir" disabled>Finalizar Quiz</button>
                 <button onclick="tentarNovamente()" id="btnTentarNovamente" disabled>Tentar novamente</button>
             </div>
 
@@ -68,12 +84,13 @@
     </div>
 </body>
 
+
 </html>
 <script>
     const listaDeQuestoes = [
 
         {
-            pergunta: "Quantas vezes Marta foi eleita a melhor jogadora do mundo pela fifa",
+            pergunta: "Quantas vezes Marta foi eleita a melhor jogadora do mundo pela fifa?",
             alternativaA: "Conquistou 2 bolas de ouro",
             alternativaB: "Conquistou 6 bolas de ouro",
             alternativaC: "Conquistou 3 bolas de ouro",
@@ -93,7 +110,7 @@
             alternativaA: "11",
             alternativaB: "10",
             alternativaC: "12",
-           alternativaCorreta: "alternativaA"
+            alternativaCorreta: "alternativaA"
         },
 
         {
@@ -101,7 +118,7 @@
             alternativaA: "Técnicos",
             alternativaB: "Reservas",
             alternativaC: "Titulares",
-           alternativaCorreta: "alternativaC"
+            alternativaCorreta: "alternativaC"
         },
 
         {
@@ -193,14 +210,15 @@
         },
     ]
 
-    // variáveis globais    
-     var numeroDaQuestaoAtual = 0
-     var pontuacaoFinal = 0
-     var tentativaIncorreta = 0
-     var certas = 0
-     var erradas = 0
+    // variáveis globais
+    var tempoRestante = 8 * 60;
+    var numeroDaQuestaoAtual = 0
+    var pontuacaoFinal = 0
+    var tentativaIncorreta = 0
+    var certas = 0
+    var erradas = 0
     var quantidadeDeQuestoes = listaDeQuestoes.length
-    let isUltima = numeroDaQuestaoAtual == quantidadeDeQuestoes-1 ? true : false
+    let isUltima = numeroDaQuestaoAtual == quantidadeDeQuestoes - 1 ? true : false
 
     function onloadEsconder() {
         document.getElementById('pontuacao').style.display = "none"
@@ -218,8 +236,29 @@
 
         btnSubmeter.disabled = false
         btnProx.disabled = true
-        // btnConcluir.disabled = true
+        btnConcluir.disabled = true
         btnTentarNovamente.disabled = true
+
+        iniciarcronometro();
+    }
+
+    function iniciarcronometro() {
+        cronometro = setTimeout(function atualizarTempo() {
+            tempoRestante--;
+            document.getElementById('tempoRestante').innerText = formatarTempo(tempoRestante);
+
+            if (tempoRestante <= 0) {
+                alert("Tempo esgotado! Quiz finalizado.");
+                finalizarJogo();
+            } else {
+                cronometro = setTimeout(atualizarTempo, 1000); // chama a função novamente após 1 segundo
+            }
+        }, 1000);
+    }
+    function formatarTempo(segundos) {
+        let minutos = parseInt(segundos / 60);
+        let segundosRestantes = segundos % 60;
+        return ("0" + minutos).slice(-2) + ":" + ("0" + segundosRestantes).slice(-2);
     }
 
     function preencherHTMLcomQuestaoAtual(index) {
@@ -248,7 +287,7 @@
         }
 
         if (!hasChecked) {
-            alert("Não há alternativas escolhidas. Escolha uma opção.")
+            alert("Não há alternativa escolhidas. Escolha uma opção.")
         } else {
             btnSubmeter.disabled = true
             btnProx.disabled = false
@@ -265,20 +304,20 @@
         primeiraOpcao.disabled = opcaoEscolhida
         segundaOpcao.disabled = opcaoEscolhida
         terceiraOpcao.disabled = opcaoEscolhida
-       // quartaOpcao.disabled = opcaoEscolhida
+        // quartaOpcao.disabled = opcaoEscolhida
 
     }
 
     function avancar() {
-        btnProx.disabled = true
+          btnProx.disabled = true
         btnSubmeter.disabled = false
 
         desmarcarRadioButtons()
 
-        if (numeroDaQuestaoAtual < quantidadeDeQuestoes -2) {
+        if (numeroDaQuestaoAtual < quantidadeDeQuestoes - 2) {
             numeroDaQuestaoAtual++
             preencherHTMLcomQuestaoAtual(numeroDaQuestaoAtual)
-        } else if (numeroDaQuestaoAtual == quantidadeDeQuestoes -2 ) {
+        } else if (numeroDaQuestaoAtual == quantidadeDeQuestoes - 2) {
             alert("Atenção... a próxima é a ultima questão!")
             numeroDaQuestaoAtual++
             preencherHTMLcomQuestaoAtual(numeroDaQuestaoAtual)
@@ -286,7 +325,14 @@
             finalizarJogo()
         }
         limparCoresBackgroundOpcoes()
+}
+    
+
+    function finalizar() {
+        clearTimeout(cronometro); // para o cronômetro
+        finalizarJogo()
     }
+
 
     function tentarNovamente() {
         // atualiza a página
@@ -294,7 +340,7 @@
     }
 
     function checarResposta() {
-        const questaoAtual = listaDeQuestoes [ numeroDaQuestaoAtual ] // questão atual 
+        const questaoAtual = listaDeQuestoes[numeroDaQuestaoAtual] // questão atual 
         const respostaQuestaoAtual = questaoAtual.alternativaCorreta // qual é a resposta correta da questão atual
 
         const options = document.getElementsByName("option"); // recupera alternativas no html
@@ -315,7 +361,7 @@
                 pontuacaoFinal++
                 certas++
                 document.getElementById("spanCertas").innerHTML = certas
-               // numeroDaQuestaoAtual++
+                // numeroDaQuestaoAtual++
             } else if (option.checked && option.value !== respostaQuestaoAtual) {
                 const wrongLabelId = option.labels[0].id
 
@@ -373,7 +419,7 @@
 
         btnProx.disabled = true
         btnSubmeter.disabled = true
-        // btnConcluir.disabled = true
+        btnConcluir.disabled = true
         btnTentarNovamente.disabled = false
 
     }

@@ -40,7 +40,7 @@ body {
     color:black; 
     background-image: url("../campo.png");
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+} 
 
 
 button {
@@ -91,4 +91,65 @@ button {
 
 .text-new-gray {
     color:#CCCCCC;
+} 
+
+/*baner de cima */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* background-color: #99c342; */
+}
+
+:root {
+  --tamanho-header: 80px;
+  --tamanho-banner: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+  --tamanho-simulador: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+  --tamanho-login: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+  --tamanho-footer: 65px;
+}
+
+* {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  width: 80%;
+  margin: auto;
+} 
+
+/* linha de divisoria banner */
+.header {
+  height: var(--tamanho-header);
+  border-bottom: 2px solid black;
+  background-color: #99c342;
+}
+
+/* direcionamento dos botões */
+.header .container {
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.header a {
+  text-decoration: none;
+  color:black;
+}
+
+/* negrito do botões em que a pagina esta */
+.agora {
+  font-weight: 800;
+}
+
+/* botões canto superior direito */
+.navbar {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  color: #e3b062;
 }
