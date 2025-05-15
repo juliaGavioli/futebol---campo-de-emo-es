@@ -38,17 +38,18 @@
 
 body {
     color:black; 
-    background-image: url("../campo.png");
+    background-image: url("../campo1.png");
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 } 
 
 
 button {
     background-color: #99c342;
-    font-family: monospace;
+    font-family: "Barlow", sans-serif;
     font-weight: bold;
 }
 
+/* cards */
 .flex-colunar {
     display: flex;
     flex-direction: column;
@@ -56,14 +57,13 @@ button {
 
 .width-fit-content {
     width: fit-content;
+    border-radius: 10px;
+    background-color: #507021;
+    width: 40%;
 }
 
 .border-primary {
-    border: 3px solid black;
-}
-
-.border-secondary {
-    border: 3px solid #0762C8;
+    border: 3px solid #ff3131;
 }
 
 .padding-8 {
@@ -124,7 +124,7 @@ body {
 .header {
   height: var(--tamanho-header);
   border-bottom: 2px solid black;
-  background-color: #99c342;
+  background-color:#769a3b;
 }
 
 /* direcionamento dos botões */

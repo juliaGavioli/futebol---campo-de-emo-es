@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #99c342;
+  background-color: #769a3b;
 }
 
 :root {
@@ -71,7 +71,7 @@ body {
 .banner {
   height: var(--tamanho-banner);
   color: black;
-  background-image: url("../Login.png");
+  background-image: url("../campo1.png");
   background-size: cover;
 }
 
@@ -135,7 +135,7 @@ body {
 
 .cadastro {
   height: var(--tamanho-login);
-  background-image: url('../Login.png');
+  background-image: url('../campo1.png');
   background-size: cover;
   height: 87vh;
 }
