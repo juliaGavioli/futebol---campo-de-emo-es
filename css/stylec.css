@@ -113,6 +113,22 @@ body {
 
 /* cadastro */
 
+.login {
+   margin-top: 20px;
+  text-align: center;
+  font-size: 18px;
+  color: black;
+}
+
+/* .login a:hover {
+  text-decoration: underline;
+} */
+
+.login a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
 
 .title {
   position: relative;
@@ -219,7 +235,7 @@ body {
   width: 150px;
   height: 40px;
   align-self: center;
-  margin-top: 20px;
+  margin-top: 5px;
 }
 
 .loading-div {
@@ -270,6 +286,15 @@ body {
   flex-direction: column;
 }
 
+.formulario span {
+  display: block;
+  font-weight: 850;
+  font-size: 18px;
+  margin-bottom: 5px;  
+  min-height: 25px;     
+  line-height: 30px;    
+}
+
 input {
   margin-bottom: 10px;
   border: 2px solid black;
@@ -289,7 +314,7 @@ input {
   background-color: #ED145B;
   width: 120px;
   align-self: center;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .loading-div {
