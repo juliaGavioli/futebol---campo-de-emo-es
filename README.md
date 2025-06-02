@@ -18,7 +18,7 @@ Além disso, o futebol tem um papel muito especial na minha vida: **jogo bola de
 
 ## Captura de Tela
 
-![Captura de tela inicial](https://github.com/user-attachments/assets/4df6ea5f-98da-48b4-ae14-bdee77bc6fc0)
+![Tela inicial](https://github.com/user-attachments/assets/4df6ea5f-98da-48b4-ae14-bdee77bc6fc0)
 
 
 ## Tecnologias Utilizadas
