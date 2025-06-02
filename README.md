@@ -16,7 +16,7 @@ Escolhi a **Turma da Mônica** como inspiração porque é um desenho que fez pa
 
 Além disso, o futebol tem um papel muito especial na minha vida: **jogo bola desde pequena**, e o esporte sempre foi o meu refúgio. É jogando futebol que **consigo me desligar do mundo e recarregar minhas energias**. Desde novinha, **frequento partidas de futebol e participei de vários campeonatos**, o que fortaleceu ainda mais minha conexão com o tema do projeto. Por isso, o quiz foi pensado como uma forma de valorizar esse esporte tão importante para mim e para tantas outras pessoas.
 
-## Captura de Tela
+## Tela inicial
 
 ![Tela inicial](https://github.com/user-attachments/assets/4df6ea5f-98da-48b4-ae14-bdee77bc6fc0)
 
