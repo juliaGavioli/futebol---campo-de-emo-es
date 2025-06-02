@@ -18,7 +18,8 @@ Além disso, o futebol tem um papel muito especial na minha vida: **jogo bola de
 
 ## Captura de Tela
 
-![Campo de Emoções - Print](https://github.com/user-attachments/assets/23177fa1-ee68-41f1-a068-0a86f5fb8e74)
+!(![Captura de tela inicial](https://github.com/user-attachments/assets/4df6ea5f-98da-48b4-ae14-bdee77bc6fc0)
+)
 
 ## Tecnologias Utilizadas
 
