@@ -1,0 +1,214 @@
+/* Não usar pure white or pure black: https://uxplanet.org/basicdesign-never-use-pure-black-in-typography-36138a3327a6 */
+/* The 4-point grid system: https://medium.com/@sainzkike/controlling-spacing-in-design-systems-multiple-spacing-9bf1afec87f */
+
+.header {
+  height: var(--tamanho-header);
+  border-bottom: 2px solid black;
+}
+
+.header .container {
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.header a {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  color: #e3b062;
+}
+
+.titulo {
+  color: black;
+  width: fit-content;
+  font-weight: 500;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+body {
+  color: black;
+  background-image: url("../assets/imgs/campo1.png");
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+button {
+  background-color: #99c342;
+  font-family: "Barlow", sans-serif;
+  font-weight: bold;
+  border-radius: 10px;
+  height: 2rem;
+  margin-top: 5px;
+}
+
+button:hover{
+  background-color: #bbd88d;
+}
+
+/* cards */
+.cardpontuacao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 45rem;
+  margin-top: -5%;
+  height: 10px;
+  margin-left: -10%;
+}
+
+.cardpontuacao button{
+  width: 70%;
+  height: 50px; 
+  margin-left: 50px;
+}
+
+.cardjogo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: -33rem;
+  margin-left: 15rem;
+  border-radius: 10px;
+  height: 28rem;
+}
+
+.card-jogo-dentro {
+  height: 28rem;
+}
+
+
+.flex-colunar {
+  display: flex;
+  flex-direction: column;
+}
+
+.width-fit-content {
+  width: fit-content;
+  border-radius: 10px;
+  background-color: #507021;
+  width: 50%;
+}
+
+.border-primary {
+  border: 5px solid #ff3131;
+}
+
+.padding-8 {
+  padding: 8px;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-success-with-bg {
+  color: #095c36;
+  background-color: #9dd3ba;
+}
+
+.text-warning-with-bg {
+  color: #705400;
+  background-color: #fdebb3;
+}
+
+.text-danger-with-bg {
+  color: #990c19;
+  background-color: #f0c1c6;
+}
+
+.text-new-gray {
+  color: #CCCCCC;
+}
+
+/*baner de cima */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* background-color: #99c342; */
+}
+
+:root {
+  --tamanho-header: 80px;
+  --tamanho-banner: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+  --tamanho-simulador: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+  --tamanho-login: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+  --tamanho-footer: 65px;
+}
+
+* {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+
+/* linha de divisoria banner */
+.header {
+  height: var(--tamanho-header);
+  border-bottom: 2px solid black;
+  background-color: #769a3b;
+}
+
+/* direcionamento dos botões */
+.header .container {
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.header a {
+  text-decoration: none;
+  color: black;
+}
+
+/* negrito do botões em que a pagina esta */
+.agora {
+  font-weight: 800;
+}
+
+/* botões canto superior direito */
+.navbar {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  color: #e3b062;
+}
+
+.cardinicio {
+  background-color: #507021;
+  padding: 35px;
+  border-radius: 12px;
+  width: 40%;
+  height: 74vh;
+  margin: 30px auto;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5PX;
+  text-align: center;
+}
+
+.cardinicio p {
+padding: 20px;
+margin-top: -4rem;
+flex-direction: center;
+}

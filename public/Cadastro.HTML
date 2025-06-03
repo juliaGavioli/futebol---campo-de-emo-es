@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Campo de emoções | Cadastro</title>
+
+  <script src="./js/sessao.js"></script>
+
+  <link rel="icon" href=".//assets/icon/gramado.jpg">
+  <link rel="stylesheet" href="../css/stylec.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+</head>
+
+<body onload="listar()">
+  <!--header inicio-->
+  <div class="header">
+    <div class="container">
+      <h1 class="titulo">Campo de Emoções</h1>
+
+      <ul class="navbar">
+        <li>
+          <a href="Index.HTML">Home</a>
+        </li>
+        <li>
+          <a href="sobre.HTML">Sobre</a>
+        </li>
+        <li>
+          <a href="Login.HTML">Login</a>
+        </li>
+        <li class="agora">
+          <a href="#">Cadastro</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!--header fim-->
+
+  <div class="cadastro">
+    <div class="alerta_erro">
+      <div class="card_erro" id="cardErro">
+        <span id="mensagem_erro"></span>
+      </div>
+    </div>
+    <div class="container">
+      <div class="card card-cadastro">
+        <h2>Bem-vindo!</h2>
+        <div class="formulario">
+          <!--
+                         Para inserir mais um campo, copie uma das inputs abaixo.
+                         Assim que inserir vá para o script abaixo.
+                     -->
+          <div class="campo">
+            <span>Nome:</span>
+            <input id="nome_input" type="text" placeholder="Seu nome" />
+          </div>
+          <div class="campo">
+            <span>E-mail:</span>
+            <input id="email_input" type="text" placeholder="seuemail@futebol.com" />
+          </div>
+          <div class="campo">
+            <span>Senha:</span>
+            <input id="senha_input" type="password" placeholder="Crie uma senha" />
+          </div>
+          <div class="campo">
+            <span>Confirme a Senha:</span>
+            <input id="confirmacao_senha_input" type="password" placeholder="Confirme sua senha" />
+          </div>
+          <button class="botao" onclick="cadastrar()">Cadastrar</button>
+          <div class="login">Já possui cadastro? <a href="Login.HTML">LOGIN</a></div>
+        </div>
+        <div id="div_aguardar" class="loading-div">
+          <img src="./assets/circle-loading.gif" id="loading-gif" />
+        </div>
+        <div id="div_erros_login"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="title">
+    <h1>Faça seu cadastro e venha se divertir! </h1>
+  </div>
+ 
+    <div class="img"><img src="../assets/imgs/cadastro.png"></div>
+  
+
+  <!--footer inicio-->
+
+  <!--footer fim-->
+</body>
+
+</html>
+
+<script>
+
+  function cadastrar() {
+        var nomeVar = document.getElementById("nome_input").value.trim();
+    var emailVar = document.getElementById("email_input").value.trim();
+    var senhaVar = document.getElementById("senha_input").value;
+    var senhaBVar = document.getElementById("confirmacao_senha_input").value;
+
+    if (nomeVar.length < 3) {
+        alert("O nome deve ter pelo menos 3 caracteres.");
+        return;
+    }
+
+    if (emailVar == "" || !emailVar.includes("@") || !emailVar.includes(".")) {
+        alert("Por favor, insira um email válido.");
+        return;
+    }
+
+    if (senhaVar.length < 6) {
+        alert("A senha deve ter no mínimo 6 caracteres.");
+        return;
+    }
+
+    if (senhaVar !== senhaBVar) {
+        alert("As senhas não coincidem.");
+        return;
+    }
+
+    // Envio se passou por tudo
+    fetch("/usuarios/cadastrar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            nomeServer: nomeVar,
+            emailServer: emailVar,
+            senhaServer: senhaVar,
+        }),
+    })
+    .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+            alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
+            window.location = "login.html";
+        } else {
+            alert("Houve um erro ao tentar realizar o cadastro!");
+        }
+    })
+    .catch(function (erro) {
+        console.log("#ERRO: ", erro);
+    });
+  }
+
+</script>

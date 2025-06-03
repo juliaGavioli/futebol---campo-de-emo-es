@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel</title>
+    <link rel="stylesheet" href="../css/styledash.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" >
+    <link rel="icon" href="../assets/icon/gramado.jpg">
+
+</head>
+<body>
+   <div class="header">
+        <div class="container">
+            <h1 class="titulo">Campo de Emoções</h1>
+            <div class="cardpainel">
+            <p>Painel de Resultado:</p> </div>
+            <ul class="navbar">
+                <li>
+                    <a href="../Index.HTML">Home</a>
+                </li>
+                <li>
+                    <a href="../sobre.HTML">Sobre</a>
+                </li>
+                <li>
+                    <a href="../Login.HTML">Login</a>
+                </li>
+                <li>
+                    <a href="../Cadastro.HTML">Cadastro</a>
+                </li>
+                <li>
+                    <a href="../quiz.HTML">Quiz</a>
+                </li>
+                <li class="agora">
+                    <a href="dashboardd.HTML">Painel</a>
+                </li>
+            </ul>
+        </div>
+    <div class="min">
+        <div class="cards">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-nome">Tempo gasto:</div>
+                    <div class="number"><span id="Tempogasto"></span></div>
+                </div>
+                <div class="icon">
+                    <img src="../assets/icon/relogio.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-nome">Acertos:</div>
+                    <div class="number"><span id="certas"></span>/15</div>
+                </div>
+                <div class="icon">
+                    <img src="../assets/icon/certo.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-nome">Erros:</div>
+                    <div class="number"><span id="erros"></span>/15</div>
+                </div>
+                <div class="icon">
+                    <img src="../assets/icon/erro.png">
+                </div>
+            </div>
+        </div>
+        <div class="charts">
+        <div class="chart">
+          <h2>Placar do conhecimento:</h2>
+          <canvas id="barChart" width="400" height="100"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+  <script src="../js/chart1.js"></script>
+</body>
+</html>
