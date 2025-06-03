@@ -254,6 +254,10 @@
         },
     ]
 
+    for (let i = 0; i < listaDeQuestoes.length; i++) {
+        console.log("Pergunta " + (i + 1) + ": " + listaDeQuestoes[i].pergunta);
+    }
+
     // variáveis globais
     var tempos = [];
     var diaInicio;
@@ -302,7 +306,8 @@
         var dateInicio = new Date();
 
         iniciarcronometro();
-        horaInicio = dateInicio.getHours();
+
+        horaInicio = dateInicio.getHours(); // get serve para capturar o dado
         minutosInicio = dateInicio.getMinutes();
         segundosInicio = dateInicio.getSeconds();
 
@@ -323,9 +328,9 @@
         }, 1000);
     }
     function formatarTempo(segundos) {
-        let minutos = parseInt(segundos / 60);
-        let segundosRestantes = segundos % 60;
-        return ("0" + minutos).slice(-2) + ":" + ("0" + segundosRestantes).slice(-2);
+        let minutos = parseInt(segundos / 60); //tranformar o numero quebrado.
+        let segundosRestantes = segundos % 60; 
+        return ("0" + minutos).slice(-2) + ":" + ("0" + segundosRestantes).slice(-2); // -2 pois ele pega os dois ultimos numeros
     }
 
     function preencherHTMLcomQuestaoAtual(index) {

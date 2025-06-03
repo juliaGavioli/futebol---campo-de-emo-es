@@ -214,6 +214,8 @@ body {
   height: 40px;
   align-self: center;
   margin-top: 5px;
+  border: 2px solid #222e0b;
+
 }
 
 .botao:hover{
