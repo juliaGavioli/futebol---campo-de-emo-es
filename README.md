@@ -1,6 +1,6 @@
 #  Campo de Emoções
 
-*Campo de Emoções* é um site institucional que apresenta um *quiz interativo com 15 perguntas* sobre o universo do futebol — *masculino e feminino*. O objetivo é oferecer uma experiência informativa, educativa e divertida, promovendo maior conhecimento sobre o esporte como um todo.
+*Campo de Emoções* é um site institucional que apresenta um *quiz interativo com 15 perguntas* sobre o universo do futebol *masculino e feminino*. O objetivo é oferecer uma experiência informativa, educativa e divertida, promovendo maior conhecimento sobre o esporte como um todo.
 
 ## Motivo
 
