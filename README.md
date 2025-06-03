@@ -8,7 +8,7 @@ A escolha do tema futebol não foi por acaso. O projeto nasceu da minha *paixão
 Além disso, o projeto traz como referência de inclusão a Turma da Mônica, um desenho que marcou minha infância. Os gibis da turma, desde 1977, destacam a **inclusão no futebol*, com personagens diversos participando ativamente dos jogos. Essa abordagem reforça os valores de igualdade, respeito e amor ao esporte.
 
 ## Tela de inicio 
-![Tela de início](![Captura de tela 2025-06-02 175350](https://github.com/user-attachments/assets/48140442-3bc9-4e51-8eed-a2ddc05fd140)
+(![Captura de tela 2025-06-02 175350](https://github.com/user-attachments/assets/48140442-3bc9-4e51-8eed-a2ddc05fd140)
 
 ## Como funciona
 
